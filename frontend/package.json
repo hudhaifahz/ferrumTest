@@ -1,0 +1,19 @@
+{
+  "name": "ferrumTest",
+  "version": "1.0.0",
+  "description": "next+express scalable test",
+  "main": "index.js",
+  "scripts": {
+	    "dev": "next",
+	    "build": "next build",
+	    "start": "next start"
+	},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^8.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}
