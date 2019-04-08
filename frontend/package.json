@@ -4,15 +4,16 @@
   "description": "next+express scalable test",
   "main": "index.js",
   "scripts": {
-	    "dev": "next -p 8080",
-	    "build": "next build",
-      "start": "next start",
-      "export": "next export"
-	},
+    "dev": "node ssr-server.js",
+    "build": "next build",
+    "start": "next start -p 8080",
+    "export": "next export"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "next": "^8.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
