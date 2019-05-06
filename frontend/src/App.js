@@ -1,0 +1,42 @@
+import React, { Component } from 'react';
+import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose} from 'redux'
+import thunkMiddleware from 'redux-thunk';
+import reducers from './reducers';
+import { routes } from './routes';
+
+import 'core-js';
+
+function configureStore(initialState) {
+      const enhancer = compose(applyMiddleware(thunkMiddleware));
+      return createStore(reducers, initialState, enhancer);
+}
+
+const store = configureStore({});
+
+class App extends Component {
+    constructor(props) {
+        super(props);
+      }
+
+  // ------------------------------------------------------
+  // Helper functions to be passed to props
+  // ------------------------------------------------------
+
+    render() {
+        return (
+            <Provider store={store}>
+                <Router>
+                    <Switch>
+                        {routes.map((route, index) => {
+                            return <Route key={index} path={route.path} component={route.component} exact={route.exact}/>
+                        })}
+                    </Switch>
+                </Router>
+            </Provider>
+        );
+    }
+}
+
+export default App;
